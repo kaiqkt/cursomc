@@ -1,8 +1,12 @@
 package com.kaiquegomesw.cursomc;
 
 import com.kaiquegomesw.cursomc.entities.Categoria;
+import com.kaiquegomesw.cursomc.entities.Cidade;
+import com.kaiquegomesw.cursomc.entities.Estado;
 import com.kaiquegomesw.cursomc.entities.Produto;
 import com.kaiquegomesw.cursomc.repositories.CategoriaRepository;
+import com.kaiquegomesw.cursomc.repositories.CidadeRepository;
+import com.kaiquegomesw.cursomc.repositories.EstadoRepository;
 import com.kaiquegomesw.cursomc.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +22,10 @@ public class CursomcApplication implements CommandLineRunner {
 	private CategoriaRepository categoriaRepository;
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	@Autowired
+	private EstadoRepository estadoRepository;
+	@Autowired
+	private CidadeRepository cidadeRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -42,7 +50,20 @@ public class CursomcApplication implements CommandLineRunner {
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		p4.getCategorias().add(cat2);
 
+		Estado est1 = new Estado(null, "mg");
+		Estado est2 = new Estado(null, "sp");
+
+		Cidade c1 = new Cidade(null, "Uberlandia", est1);
+		Cidade c2 = new Cidade(null, "São Paulo", est2);
+		Cidade c3 = new Cidade(null, "Diadema", est2);
+
+		est1.getCidades().add(c1);
+		est2.getCidades().addAll(Arrays.asList(c2, c3));
+
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4));
+
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 	}
 }
