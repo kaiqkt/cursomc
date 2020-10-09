@@ -18,8 +18,8 @@ public class CategoriaController {
     @Autowired
     CategoriaService service;
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<?> find(@PathVariable Integer id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Categoria>> find(@PathVariable Integer id) {
         Optional<Categoria> categoria = service.buscar(id);
         return ResponseEntity.ok().body(categoria);
     }
