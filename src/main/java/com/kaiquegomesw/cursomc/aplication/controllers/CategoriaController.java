@@ -1,7 +1,7 @@
-package com.kaiquegomesw.cursomc.controllers;
+package com.kaiquegomesw.cursomc.aplication.controllers;
 
-import com.kaiquegomesw.cursomc.entities.Categoria;
-import com.kaiquegomesw.cursomc.service.CategoriaService;
+import com.kaiquegomesw.cursomc.domain.entities.Categoria;
+import com.kaiquegomesw.cursomc.domain.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

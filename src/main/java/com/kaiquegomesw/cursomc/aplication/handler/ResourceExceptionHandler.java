@@ -1,6 +1,6 @@
-package com.kaiquegomesw.cursomc.handler;
+package com.kaiquegomesw.cursomc.aplication.handler;
 
-import com.kaiquegomesw.cursomc.exceptions.ObjectNotFoundException;
+import com.kaiquegomesw.cursomc.aplication.exceptions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

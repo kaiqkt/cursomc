@@ -1,6 +1,6 @@
-package com.kaiquegomesw.cursomc.repositories;
+package com.kaiquegomesw.cursomc.domain.repositories;
 
-import com.kaiquegomesw.cursomc.entities.Cidade;
+import com.kaiquegomesw.cursomc.domain.entities.Cidade;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

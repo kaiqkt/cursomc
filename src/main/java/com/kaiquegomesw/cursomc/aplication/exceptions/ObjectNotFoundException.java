@@ -1,4 +1,4 @@
-package com.kaiquegomesw.cursomc.exceptions;
+package com.kaiquegomesw.cursomc.aplication.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException{
 

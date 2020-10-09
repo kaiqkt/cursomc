@@ -1,8 +1,8 @@
-package com.kaiquegomesw.cursomc.service;
+package com.kaiquegomesw.cursomc.domain.service;
 
-import com.kaiquegomesw.cursomc.entities.Categoria;
-import com.kaiquegomesw.cursomc.exceptions.ObjectNotFoundException;
-import com.kaiquegomesw.cursomc.repositories.CategoriaRepository;
+import com.kaiquegomesw.cursomc.domain.entities.Categoria;
+import com.kaiquegomesw.cursomc.aplication.exceptions.ObjectNotFoundException;
+import com.kaiquegomesw.cursomc.domain.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
