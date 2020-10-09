@@ -21,6 +21,7 @@ public class CategoriaController {
     @GetMapping("/{id}")
     public ResponseEntity<?> find(@PathVariable Integer id) {
         Optional<Categoria> categoria = service.buscar(id);
+
         return ResponseEntity.ok().body(categoria);
     }
 }

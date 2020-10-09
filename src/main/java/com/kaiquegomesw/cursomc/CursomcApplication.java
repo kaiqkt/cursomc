@@ -15,10 +15,9 @@ import java.util.Arrays;
 public class CursomcApplication implements CommandLineRunner {
 
 	@Autowired
-	CategoriaRepository repository;
-
+	private CategoriaRepository categoriaRepository;
 	@Autowired
-	ProdutoRepository pRepository;
+	private ProdutoRepository produtoRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -27,21 +26,23 @@ public class CursomcApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Categoria cat1 = new Categoria(null,"informatica");
-		Categoria cat2 = new Categoria(null,"escritorio");
+		Categoria cat1 = new Categoria(null, "Informática");
+		Categoria cat2 = new Categoria(null, "Escritório");
 
-		Produto prod1 = new Produto(null, "computado", 2000.0);
-		Produto prod2 = new Produto(null, "impressora", 800.0);
-		Produto prod3  = new Produto(null, "mouse", 80.0);
+		Produto p1 = new Produto(null, "Computador", 2000.00);
+		Produto p2 = new Produto(null, "Impressora", 800.00);
+		Produto p3 = new Produto(null, "Mouse", 80.00);
+		Produto p4 = new Produto(null, "Mouse", 80.00);
 
-		cat1.getProdutos().addAll(Arrays.asList(prod1, prod2, prod3));
-		cat2.getProdutos().addAll(Arrays.asList(prod2));
+		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
+		cat2.getProdutos().addAll(Arrays.asList(p2, p4));
 
-		prod1.getCategorias().addAll(Arrays.asList(cat1));
-		prod2.getCategorias().addAll(Arrays.asList(cat1, cat2));
-		prod3.getCategorias().addAll(Arrays.asList(cat1));
+		p1.getCategorias().addAll(Arrays.asList(cat1));
+		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
+		p3.getCategorias().addAll(Arrays.asList(cat1));
+		p4.getCategorias().add(cat2);
 
-		repository.saveAll(Arrays.asList(cat1, cat2));
-		pRepository.saveAll(Arrays.asList(prod1, prod2, prod3));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4));
 	}
 }
